@@ -3,17 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>M. Batiya | Data Science & Informatics Portfolio</title>
+    <title>M. Batiya | Data Scientist | Business Analyst | IT Specialist</title>
     <style>
+        /* Modern Dark Portfolio Color Scheme */
         :root {
-            --bg-main: #0b0f19;
-            --bg-card: #131c2e;
-            --bg-nav: rgba(11, 15, 25, 0.95);
-            --text-primary: #f1f5f9;
-            --text-secondary: #94a3b8;
-            --accent-glow: #38bdf8;
+            --bg-color: #0b0f19;
+            --card-color: #131c2e;
+            --nav-color: rgba(11, 15, 25, 0.95);
+            --text-main: #f1f5f9;
+            --text-sub: #94a3b8;
+            --accent: #38bdf8;
             --accent-hover: #0ea5e9;
-            --border-color: #1e293b;
+            --accent-secondary: #06b6d4;
+            --border: #1e293b;
+            --success: #10b981;
+            --warning: #f59e0b;
         }
 
         * {
@@ -24,23 +28,24 @@
         }
 
         body {
-            background-color: var(--bg-main);
-            color: var(--text-primary);
+            background-color: var(--bg-color);
+            color: var(--text-main);
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
             line-height: 1.6;
             padding-top: 80px;
         }
 
-        /* Sticky Navigation Menu */
+        /* Top Navigation Header Framework */
         nav {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            background-color: var(--bg-nav);
-            border-bottom: 1px solid var(--border-color);
+            background-color: var(--nav-color);
+            border-bottom: 1px solid var(--border);
             z-index: 1000;
             backdrop-filter: blur(8px);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
         }
 
         .nav-container {
@@ -49,36 +54,59 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 20px;
+            padding: 18px 20px;
         }
 
-        .nav-logo {
-            font-size: 1.3rem;
+        .logo {
+            font-size: 1.4rem;
             font-weight: 700;
-            color: var(--accent-glow);
+            color: var(--accent);
             text-decoration: none;
             letter-spacing: 0.5px;
+            transition: color 0.3s ease;
+        }
+
+        .logo:hover {
+            color: var(--accent-secondary);
         }
 
         .nav-links {
             display: flex;
             list-style: none;
             gap: 25px;
+            flex-wrap: wrap;
+            justify-content: flex-end;
         }
 
         .nav-links a {
-            color: var(--text-secondary);
+            color: var(--text-sub);
             text-decoration: none;
             font-size: 0.95rem;
             font-weight: 500;
             transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent);
+            transition: width 0.3s ease;
         }
 
         .nav-links a:hover {
-            color: var(--accent-glow);
+            color: var(--accent);
         }
 
-        /* Content Layout Framework */
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Main Container Framework */
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -86,150 +114,257 @@
         }
 
         section {
-            padding: 60px 0 30px 0;
-            border-bottom: 1px solid var(--border-color);
+            padding: 80px 0 50px 0;
+            border-bottom: 1px solid var(--border);
+            animation: fadeIn 0.6s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        section:last-of-type {
+            border-bottom: none;
         }
 
         h2 {
             font-size: 2rem;
-            color: var(--text-primary);
-            margin-bottom: 30px;
+            color: var(--text-main);
+            margin-bottom: 40px;
             position: relative;
             display: inline-block;
+            font-weight: 700;
         }
 
         h2::after {
             content: '';
             position: absolute;
-            bottom: -6px;
+            bottom: -12px;
             left: 0;
-            width: 50px;
-            height: 3px;
-            background-color: var(--accent-glow);
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent), var(--accent-secondary));
             border-radius: 2px;
         }
 
         h3 {
-            font-size: 1.3rem;
-            color: var(--accent-glow);
-            margin-bottom: 10px;
+            font-size: 1.4rem;
+            color: var(--accent);
+            margin-bottom: 15px;
+            font-weight: 600;
         }
 
         h4 {
-            color: var(--text-primary);
-            margin-bottom: 12px;
-            font-size: 1.1rem;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 6px;
+            color: var(--text-main);
+            margin-bottom: 8px;
+            font-size: 1.15rem;
+            font-weight: 600;
         }
 
         .sub-title {
-            color: var(--text-secondary);
+            color: var(--text-sub);
             font-size: 0.95rem;
             font-style: italic;
             margin-bottom: 15px;
+            font-weight: 400;
         }
 
-        /* About & Contact Side-by-Side Framework */
-        .intro-grid {
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 40px;
-            align-items: start;
+        /* Hero Section */
+        .hero-section {
+            text-align: center;
+            padding: 80px 0 60px 0;
+            border-bottom: 1px solid var(--border);
         }
 
-        .about-text {
-            font-size: 1.1rem;
-            color: var(--text-secondary);
-            text-align: justify;
-            margin-bottom: 35px;
+        .name-banner h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+            letter-spacing: -1px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
-        .btn-cta {
-            display: inline-block;
-            background-color: var(--accent-glow);
-            color: var(--bg-main);
-            text-decoration: none;
-            padding: 12px 30px;
-            font-weight: 600;
-            border-radius: 6px;
-            transition: all 0.3s ease;
-        }
-
-        .btn-cta:hover {
-            background-color: var(--accent-hover);
-            transform: translateY(-2px);
-        }
-
-        .contact-box {
-            background-color: var(--bg-card);
-            padding: 25px;
-            border-radius: 8px;
-            border: 1px solid var(--border-color);
-        }
-
-        .contact-list {
-            list-style: none;
-        }
-
-        .contact-list li {
-            margin-bottom: 20px;
-            color: var(--text-secondary);
-        }
-
-        .contact-list strong {
-            color: var(--text-primary);
-            display: block;
-            font-size: 0.85rem;
-            text-transform: uppercase;
+        .title-tagline {
+            font-size: 1.4rem;
+            color: var(--text-sub);
+            margin-bottom: 40px;
+            font-weight: 500;
             letter-spacing: 0.5px;
-            margin-bottom: 4px;
         }
 
-        .contact-list a {
-            color: var(--accent-glow);
-            text-decoration: none;
-        }
-
-        .contact-list a:hover {
-            text-decoration: underline;
-        }
-
-        /* Multi-column Grid Frameworks */
-        .three-column-grid {
+        /* Side-by-Side Grid Layout */
+        .side-by-side-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: start;
         }
 
         .two-column-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 25px;
+            gap: 35px;
+            align-items: start;
         }
 
-        .card-element {
-            background-color: var(--bg-card);
-            padding: 25px;
-            border-radius: 8px;
-            border: 1px solid var(--border-color);
-            transition: transform 0.3s ease, border-color 0.3s ease;
+        .three-column-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
         }
 
-        .card-element:hover {
-            transform: translateY(-4px);
-            border-color: var(--accent-glow);
+        .flex-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
         }
 
-        .card-element ul {
-            list-style-type: square;
-            margin-left: 20px;
-            color: var(--text-secondary);
+        /* Card Content Elements */
+        .card {
+            background-color: var(--card-color);
+            padding: 30px;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            border-color: var(--accent);
+            box-shadow: 0 10px 30px rgba(56, 189, 248, 0.1);
+        }
+
+        .card h4 {
+            border: none;
+            padding-bottom: 0;
+            margin-bottom: 12px;
+        }
+
+        .card ul {
+            list-style-type: none;
+            margin-left: 0;
+            color: var(--text-sub);
             font-size: 0.95rem;
         }
 
-        .card-element li {
-            margin-bottom: 8px;
+        .card li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .card li::before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        /* About Section Styling */
+        .about-content {
+            grid-column: 1 / -1;
+        }
+
+        .about-para {
+            font-size: 1.05rem;
+            color: var(--text-sub);
+            text-align: justify;
+            margin-bottom: 25px;
+            line-height: 1.8;
+        }
+
+        /* Contact Details Styling */
+        .contact-box {
+            background-color: var(--card-color);
+            padding: 35px;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .contact-box:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent);
+        }
+
+        .contact-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 1rem;
+            color: var(--text-sub);
+        }
+
+        .contact-icon {
+            font-size: 1.3rem;
+            color: var(--accent);
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .contact-info {
+            flex: 1;
+        }
+
+        .contact-label {
+            color: var(--text-main);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: block;
+            margin-bottom: 4px;
+            font-weight: 600;
+        }
+
+        .contact-list a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: text-decoration 0.2s, color 0.2s;
+        }
+
+        .contact-list a:hover {
+            text-decoration: underline;
+            color: var(--accent-hover);
+        }
+
+        /* Skills Layout */
+        .skill-category {
+            background-color: var(--card-color);
+            padding: 30px;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-6px);
+            border-color: var(--accent);
+            box-shadow: 0 10px 30px rgba(56, 189, 248, 0.1);
+        }
+
+        .skill-category h3 {
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 12px;
+            margin-bottom: 20px;
         }
 
         .skills-list {
@@ -237,48 +372,277 @@
         }
 
         .skills-list li {
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             font-size: 0.95rem;
-            color: var(--text-secondary);
+            color: var(--text-sub);
             position: relative;
-            padding-left: 15px;
+            padding-left: 18px;
+            line-height: 1.5;
         }
 
         .skills-list li::before {
-            content: "▪";
+            content: "✓";
             position: absolute;
             left: 0;
-            color: var(--accent-glow);
+            color: var(--success);
+            font-weight: bold;
+            font-size: 1.1rem;
         }
 
+        /* Experience Section */
+        .experience-item {
+            background-color: var(--card-color);
+            padding: 30px;
+            border-radius: 10px;
+            border-left: 4px solid var(--accent);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 0;
+        }
+
+        .experience-item:hover {
+            transform: translateX(6px);
+            box-shadow: 0 10px 30px rgba(56, 189, 248, 0.1);
+        }
+
+        .experience-item h3 {
+            margin-top: 0;
+        }
+
+        .company-title {
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 4px;
+        }
+
+        .experience-period {
+            color: var(--text-sub);
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+            font-style: italic;
+        }
+
+        .experience-item ul {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .experience-item li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+            color: var(--text-sub);
+            font-size: 0.95rem;
+        }
+
+        .experience-item li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        /* Project Cards */
+        .project-card {
+            background-color: var(--card-color);
+            padding: 30px;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent);
+            box-shadow: 0 15px 40px rgba(56, 189, 248, 0.15);
+        }
+
+        .project-card h3 {
+            margin-top: 0;
+            margin-bottom: 8px;
+        }
+
+        .project-description {
+            color: var(--text-sub);
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 15px;
+        }
+
+        .tech-badge {
+            background-color: rgba(56, 189, 248, 0.1);
+            color: var(--accent);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border: 1px solid var(--accent);
+        }
+
+        /* Education Section */
+        .education-card {
+            background-color: var(--card-color);
+            padding: 30px;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+            border-top: 4px solid var(--accent);
+        }
+
+        .education-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent);
+        }
+
+        .degree-name {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--text-main);
+            margin-bottom: 8px;
+        }
+
+        .institution {
+            color: var(--accent);
+            font-weight: 500;
+            margin-bottom: 12px;
+        }
+
+        .education-details {
+            color: var(--text-sub);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Call to Action Button */
+        .btn-cta {
+            display: inline-block;
+            background-color: var(--accent);
+            color: var(--bg-color);
+            text-decoration: none;
+            padding: 12px 32px;
+            font-weight: 600;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            border: 2px solid var(--accent);
+            cursor: pointer;
+            font-size: 0.95rem;
+        }
+
+        .btn-cta:hover {
+            background-color: var(--accent-hover);
+            border-color: var(--accent-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(56, 189, 248, 0.3);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--accent);
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(56, 189, 248, 0.1);
+        }
+
+        /* Footer Alignment */
         footer {
             text-align: center;
-            padding: 60px 0 40px 0;
-            color: var(--text-secondary);
+            padding: 50px 0 30px 0;
+            color: var(--text-sub);
             font-size: 0.9rem;
-            border-top: 1px solid var(--border-color);
-            margin-top: 40px;
+            border-top: 1px solid var(--border);
+            margin-top: 50px;
         }
 
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        footer a:hover {
+            color: var(--accent-hover);
+        }
+
+        /* Responsive Breakpoints */
         @media (max-width: 968px) {
-            .three-column-grid, .two-column-grid, .intro-grid { grid-template-columns: 1fr; gap: 30px; }
+            .three-column-grid { 
+                grid-template-columns: 1fr 1fr;
+            }
+            .side-by-side-grid, .two-column-grid { 
+                grid-template-columns: 1fr; 
+                gap: 40px; 
+            }
+            .name-banner h1 {
+                font-size: 2.5rem;
+            }
+            .title-tagline {
+                font-size: 1.2rem;
+            }
         }
 
         @media (max-width: 768px) {
-            .nav-container { flex-direction: column; gap: 15px; }
-            .nav-links { gap: 15px; }
-            body { padding-top: 120px; }
+            .nav-container { 
+                flex-direction: column; 
+                gap: 12px; 
+                padding: 12px; 
+            }
+            .nav-links { 
+                gap: 12px;
+                flex-direction: column;
+                text-align: center;
+            }
+            body { 
+                padding-top: 150px; 
+            }
+            .name-banner h1 { 
+                font-size: 2rem; 
+            }
+            .title-tagline {
+                font-size: 1rem;
+            }
+            .three-column-grid {
+                grid-template-columns: 1fr;
+            }
+            .contact-list {
+                grid-template-columns: 1fr;
+            }
+            h2 {
+                font-size: 1.5rem;
+            }
+            section {
+                padding: 60px 0 40px 0;
+            }
+        }
+
+        /* Utility Classes */
+        .section-intro {
+            margin-bottom: 40px;
+        }
+
+        .divider {
+            height: 1px;
+            background-color: var(--border);
+            margin: 40px 0;
         }
     </style>
 </head>
 <body>
 
-    <!-- Top Sticky Header Navigation Links -->
+    <!-- Fixed Navigation Bar -->
     <nav>
         <div class="nav-container">
-            <a href="#" class="nav-logo">M. BATIYA</a>
+            <a href="#home" class="logo">M. BATIYA</a>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#experience">Experience</a></li>
@@ -289,130 +653,338 @@
 
     <div class="container">
 
-        <!-- 1. About & Contact Block Frame (Side by Side) -->
+        <!-- Hero Section -->
+        <section id="home" class="hero-section">
+            <div class="name-banner">
+                <h1>M. Batiya</h1>
+                <div class="title-tagline">Data Scientist | Business Analyst | IT Specialist | Machine Learning Engineer</div>
+            </div>
+        </section>
+
+        <!-- About & Contact Section -->
         <section id="about">
-            <div class="intro-grid">
-                <div>
-                    <h2>About Me</h2>
-                    <p class="about-text">
-                        I am a versatile professional with a degree in Data Science and Informatics, expertise in data science, machine learning engineering, IT support, software development, and consulting. As a solution-oriented individual, I bring a unique blend of technical skills and strategic thinking to solve complex problems and deliver impactful results. I specialize in bridging hardware framework operations with advanced modern machine learning pipelines.
-                    </p>
-                    <a href="#skills" class="btn-cta">Explore My Skills</a>
+            <h2>About Me</h2>
+            <div class="about-content">
+                <p class="about-para">
+                    I am a versatile Data Science and Informatics professional with a passion for transforming complex data into actionable business intelligence. With a strong foundation in machine learning, statistical analysis, and data engineering, I excel at developing sophisticated solutions that drive organizational growth and informed decision-making. My experience spans the entire data science lifecycle—from designing ETL pipeline architectures and implementing data warehousing solutions to developing advanced predictive models and creating interactive dashboards that enable data-driven decision-making.
+                </p>
+                <p class="about-para">
+                    As a solution-oriented individual, I blend technical proficiency with strategic thinking to address multifaceted business challenges. My professional journey includes a one-year attachment at the National Social Security Authority's National Data Management Unit, where I developed Django web applications for anomaly detection and engineered customized KPI dashboards. Additionally, my three years of IT support experience at Telone's MSU Gweru Campus equipped me with deep expertise in enterprise infrastructure, help desk operations, and technical troubleshooting. I am committed to continuous learning and staying at the forefront of emerging technologies in data science, artificial intelligence, and cloud computing.
+                </p>
+            </div>
+
+            <h2 style="margin-top: 60px; margin-bottom: 30px;">Contact Details</h2>
+            <div class="contact-box">
+                <ul class="contact-list">
+                    <li class="contact-item">
+                        <span class="contact-icon">📧</span>
+                        <div class="contact-info">
+                            <span class="contact-label">Email Address</span>
+                            <a href="mailto:your.email@gmail.com">your.email@gmail.com</a>
+                        </div>
+                    </li>
+                    <li class="contact-item">
+                        <span class="contact-icon">💼</span>
+                        <div class="contact-info">
+                            <span class="contact-label">LinkedIn Profile</span>
+                            <a href="https://www.linkedin.com/in/your-profile" target="_blank">linkedin.com/in/your-profile</a>
+                        </div>
+                    </li>
+                    <li class="contact-item">
+                        <span class="contact-icon">🐙</span>
+                        <div class="contact-info">
+                            <span class="contact-label">GitHub Repository</span>
+                            <a href="https://github.com/your-username" target="_blank">github.com/your-username</a>
+                        </div>
+                    </li>
+                    <li class="contact-item">
+                        <span class="contact-icon">📱</span>
+                        <div class="contact-info">
+                            <span class="contact-label">Phone Number</span>
+                            <a href="tel:+263123456789">+263 (123) 456-789</a>
+                        </div>
+                    </li>
+                    <li class="contact-item">
+                        <span class="contact-icon">📍</span>
+                        <div class="contact-info">
+                            <span class="contact-label">Address</span>
+                            <span>Gweru, Zimbabwe</span>
+                        </div>
+                    </li>
+                    <li class="contact-item">
+                        <span class="contact-icon">🔗</span>
+                        <div class="contact-info">
+                            <span class="contact-label">Portfolio</span>
+                            <a href="https://mbatiya.github.io" target="_blank">https://mbatiya.github.io</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills">
+            <h2>Skills & Expertise</h2>
+            <div class="three-column-grid">
+                <!-- Data Science & ML Card -->
+                <div class="skill-category">
+                    <h3>Data Science & ML</h3>
+                    <ul class="skills-list">
+                        <li><strong>Languages:</strong> Python, R, Java (Intermediate)</li>
+                        <li><strong>EDA:</strong> Exploratory Data Analysis & Feature Engineering</li>
+                        <li><strong>Libraries:</strong> Pandas, NumPy, Scikit-learn, SciPy</li>
+                        <li><strong>Visualization:</strong> Matplotlib, Seaborn, Plotly, Tableau</li>
+                        <li><strong>ML Frameworks:</strong> TensorFlow, PyTorch, Keras</li>
+                        <li><strong>NLP:</strong> Natural Language Processing</li>
+                        <li><strong>Computer Vision:</strong> Image Processing & Analysis</li>
+                        <li><strong>Analytics:</strong> Statistical Analysis, Predictive Modeling</li>
+                        <li><strong>Big Data:</strong> Spark, Big Data Technologies</li>
+                        <li><strong>Dashboard:</strong> Data Storytelling & Interactive Dashboards</li>
+                    </ul>
                 </div>
-                <div>
-                    <h2>Get In Touch</h2>
-                    <div class="contact-box">
-                        <ul class="contact-list">
-                            <li><strong>Email Address</strong><a href="mailto:your.email@email.com">your.email@email.com</a></li>
-                            <li><strong>LinkedIn Profile</strong><a href="https://linkedin.com" target="_blank">://linkedin.com</a></li>
-                            <li><strong>GitHub Repositories</strong><a href="https://github.com" target="_blank">://github.com</a></li>
-                            <li><strong>Phone Reference</strong>+263 7XX XXX XXX</li>
-                            <li><strong>Current Location</strong>Gweru, Zimbabwe</li>
+
+                <!-- IT Specialist Card -->
+                <div class="skill-category">
+                    <h3>IT Specialist</h3>
+                    <ul class="skills-list">
+                        <li><strong>Web Development:</strong> Django Web Framework</li>
+                        <li><strong>Data Engineering:</strong> ETL Pipelines & Data Warehousing</li>
+                        <li><strong>Data Mining:</strong> Data Mining & Advanced Processing</li>
+                        <li><strong>Databases:</strong> SQL, Data Governance & Architecture</li>
+                        <li><strong>Support:</strong> User Support & Technical Help Desk</li>
+                        <li><strong>Infrastructure:</strong> Networking, System Administration</li>
+                        <li><strong>Troubleshooting:</strong> System Troubleshooting & Maintenance</li>
+                        <li><strong>Cloud Computing:</strong> Cloud Infrastructure & Deployment</li>
+                        <li><strong>IoT:</strong> IoT Applications & Solutions</li>
+                        <li><strong>Project Mgmt:</strong> Agile, Scrum, Technical PM</li>
+                    </ul>
+                </div>
+
+                <!-- Soft Skills Card -->
+                <div class="skill-category">
+                    <h3>Soft Skills</h3>
+                    <ul class="skills-list">
+                        <li><strong>Problem Solving:</strong> Complex analytical & creative solutions</li>
+                        <li><strong>Openness:</strong> Open to constructive feedback & improvement</li>
+                        <li><strong>Accountability:</strong> Responsibility & ownership focus</li>
+                        <li><strong>Teamwork:</strong> Collaborative & cross-functional teams</li>
+                        <li><strong>Adaptability:</strong> Quick learner in dynamic situations</li>
+                        <li><strong>Communication:</strong> Technical documentation & reporting</li>
+                        <li><strong>Leadership:</strong> Mentoring & technical guidance</li>
+                        <li><strong>Learning Mindset:</strong> Continuous professional development</li>
+                        <li><strong>Critical Thinking:</strong> Strategic analysis & decision-making</li>
+                        <li><strong>Time Management:</strong> Efficient project & task management</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects">
+            <h2>Projects & Deliverables</h2>
+            <div class="flex-grid">
+                <div class="project-card">
+                    <h3>Employer Contribution Default & Anomaly Detection</h3>
+                    <p class="project-description">
+                        Engineered a comprehensive Django web application incorporating advanced statistical models and machine learning algorithms to automatically detect and flag employer contribution defaults. System processes high-volume institutional datasets with real-time alerting and anomaly flagging capabilities for proactive intervention.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-badge">Django</span>
+                        <span class="tech-badge">Python</span>
+                        <span class="tech-badge">ML</span>
+                        <span class="tech-badge">SQL</span>
+                        <span class="tech-badge">Statistical Models</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>Customized KPI Dashboard & Analytics Platform</h3>
+                    <p class="project-description">
+                        Developed tailored KPI dashboards explicitly designed to stakeholder preferences, translating complex corporate analytics into clear, actionable business insights. Implemented interactive visualizations with drill-down capabilities enabling data-driven decision-making across all organizational levels and departments.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-badge">Plotly</span>
+                        <span class="tech-badge">Seaborn</span>
+                        <span class="tech-badge">Pandas</span>
+                        <span class="tech-badge">Data Visualization</span>
+                        <span class="tech-badge">Dashboard Design</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>ETL Pipeline Development & Data Processing</h3>
+                    <p class="project-description">
+                        Designed and implemented robust ETL (Extract, Transform, Load) pipelines to securely process and cleanse high-volume institutional datasets. Ensured data quality, consistency, accessibility while maintaining security protocols, regulatory compliance, and efficient data transformation workflows.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-badge">Python</span>
+                        <span class="tech-badge">Pandas</span>
+                        <span class="tech-badge">SQL</span>
+                        <span class="tech-badge">Data Engineering</span>
+                        <span class="tech-badge">ETL</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>Predictive Analytics & ML Models</h3>
+                    <p class="project-description">
+                        Developed sophisticated machine learning models for predictive analytics, leveraging TensorFlow and Scikit-learn to forecast trends, identify patterns, and support strategic business decisions. Implemented comprehensive feature engineering and model optimization techniques for enhanced accuracy and performance.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-badge">TensorFlow</span>
+                        <span class="tech-badge">Scikit-learn</span>
+                        <span class="tech-badge">Python</span>
+                        <span class="tech-badge">Analytics</span>
+                        <span class="tech-badge">Modeling</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>Data Visualization & EDA</h3>
+                    <p class="project-description">
+                        Conducted comprehensive exploratory data analysis (EDA) and created compelling data visualizations using Matplotlib and Seaborn. Applied data cleaning, pattern recognition, and statistical summarization techniques to reveal actionable insights from complex, multidimensional datasets.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-badge">Matplotlib</span>
+                        <span class="tech-badge">Seaborn</span>
+                        <span class="tech-badge">EDA</span>
+                        <span class="tech-badge">Python</span>
+                        <span class="tech-badge">Statistics</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>IT Infrastructure & Help Desk Operations</h3>
+                    <p class="project-description">
+                        Provided comprehensive IT support including hardware troubleshooting, software installations, system maintenance, and network management. Resolved technical issues across campus infrastructure, coordinated OS updates, security patches, and managed computer laboratory operations and user support.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-badge">Help Desk</span>
+                        <span class="tech-badge">Networking</span>
+                        <span class="tech-badge">System Admin</span>
+                        <span class="tech-badge">Troubleshooting</span>
+                        <span class="tech-badge">Support</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Working Experience Section -->
+        <section id="experience">
+            <h2>Working Experience</h2>
+
+            <div class="two-column-grid">
+                <!-- NSSA Experience -->
+                <div class="experience-item">
+                    <div class="company-title">National Social Security Authority (NSSA)</div>
+                    <h3>Data Scientist Attache</h3>
+                    <div class="sub-title">National Data Management Unit</div>
+                    <div class="experience-period">October 2024 - September 2025 (1-Year Attachment)</div>
+                    <ul>
+                        <li>Performed ETL (Extract, Transform, Load) pipelines to securely process and clean high-volume institutional datasets</li>
+                        <li>Developed customized KPI dashboards explicitly tailored to stakeholder preferences, translating complex corporate analytics into clear, actionable business insights</li>
+                        <li>Engineered a Django web application incorporating advanced statistical models to flag employer contribution defaults and perform sophisticated anomaly detection</li>
+                        <li>Conducted exploratory data analysis (EDA) on institutional datasets to identify trends, patterns, and anomalies</li>
+                        <li>Collaborated with cross-functional teams to understand business requirements and implement data-driven solutions</li>
+                        <li>Maintained data governance standards and ensured compliance with organizational policies and regulations</li>
+                        <li>Developed predictive models to support strategic business intelligence and decision-making</li>
+                        <li>Created comprehensive technical documentation and analytical reports for stakeholder communication</li>
+                    </ul>
+                </div>
+
+                <!-- TelOne Experience -->
+                <div class="experience-item">
+                    <div class="company-title">Telone MSU Gweru Campus</div>
+                    <h3>IT Support Technician</h3>
+                    <div class="sub-title">IT Department</div>
+                    <div class="experience-period">3-Year Residency (Campus IT Operations)</div>
+                    <ul>
+                        <li>Delivered comprehensive help desk support, optimizing network connectivity and handling system troubleshooting across campus infrastructure</li>
+                        <li>Performed OS installations and software deployments on campus workstations and laboratory systems</li>
+                        <li>Managed system updates, security patches, and maintenance schedules to ensure optimal system performance</li>
+                        <li>Maintained local campus networks, resolving hardware and software issues to minimize downtime</li>
+                        <li>Provided user technical support and training for campus staff and students</li>
+                        <li>Served as computer laboratory assistant, supporting academic computing activities and user assistance</li>
+                        <li>Implemented documentation and troubleshooting procedures for common technical issues</li>
+                        <li>Coordinated with senior IT staff on infrastructure projects and system optimization initiatives</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education">
+            <h2>Education</h2>
+
+            <div class="three-column-grid">
+                <!-- Degree -->
+                <div class="education-card">
+                    <div class="degree-name">BSc (Hons) Degree</div>
+                    <div class="institution">Data Science and Informatics</div>
+                    <div class="education-details">
+                        <p><strong>Institution:</strong> Midlands State University</p>
+                        <p><strong>Status:</strong> Final Year | Completed Final Examinations</p>
+                        <p><strong>Key Focus Areas:</strong></p>
+                        <ul style="margin-left: 15px; margin-top: 8px; color: var(--text-sub); font-size: 0.9rem;">
+                            <li>Data Science & Analytics</li>
+                            <li>Machine Learning Engineering</li>
+                            <li>Data Warehousing & Mining</li>
+                            <li>Statistical Analysis</li>
+                            <li>Information Systems</li>
+                            <li>Advanced Programming</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Professional Certifications -->
+                <div class="education-card">
+                    <div class="degree-name">Professional Certifications</div>
+                    <div class="institution">Industry Recognition</div>
+                    <div class="education-details">
+                        <p><strong>OCI Certified Data Science Professional</strong></p>
+                        <p style="font-size: 0.9rem; color: var(--text-sub);">Oracle Cloud Infrastructure - Data Science Specialization</p>
+                        
+                        <p style="margin-top: 15px;"><strong>Databases and SQL for Data Science</strong></p>
+                        <p style="font-size: 0.9rem; color: var(--text-sub);">Coursera Professional Certificate</p>
+                        
+                        <p style="margin-top: 15px;"><strong>What is Data Science?</strong></p>
+                        <p style="font-size: 0.9rem; color: var(--text-sub);">Coursera Foundational Course</p>
+                    </div>
+                </div>
+
+                <!-- Key Modules & Achievements -->
+                <div class="education-card">
+                    <div class="degree-name">Core Competencies</div>
+                    <div class="institution">Academic Modules</div>
+                    <div class="education-details">
+                        <p><strong>Completed Modules:</strong></p>
+                        <ul style="margin-left: 15px; margin-top: 8px; font-size: 0.9rem; color: var(--text-sub);">
+                            <li>Machine Learning I & II</li>
+                            <li>Natural Language Processing</li>
+                            <li>Data Warehousing & Mining</li>
+                            <li>R Programming & Computer Vision</li>
+                            <li>Statistical Analysis</li>
+                            <li>Python Programming</li>
+                            <li>Database Design & SQL</li>
+                            <li>ETL & Data Governance</li>
+                            <li>Information Infrastructure</li>
+                            <li>Work-Related Learning (Project)</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 2. Technical Skills Matrix Segment (3 Columns) -->
-        <section id="skills">
-            <h2>Technical Skills</h2>
-            <div class="three-column-grid">
-                
-                <div class="card-element">
-                    <h4>Data Science & ML</h4>
-                    <ul class="skills-list">
-                        <li><strong>Languages:</strong> Python, R, Java (Ongoing)</li>
-                        <li>Exploratory Data Analysis (EDA)</li>
-                        <li>Feature Engineering Operations</li>
-                        <li>Data Understanding Principles</li>
-                        <li><strong>Libraries:</strong> Pandas, NumPy, Scikit-learn, SciPy</li>
-                        <li>Designed automated feature engineering workflows to enrich complex institutional datasets.</li>
-                        <li>Authored technical documentation, prioritizing comprehensive report writing and dynamic data storytelling to address stakeholder preferences.</li>
-                    </ul>
-                </div>
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2026 M. Batiya. All rights reserved.</p>
+            <p style="margin-top: 10px; font-size: 0.85rem;">
+                Crafted with <span style="color: var(--accent);">♥</span> | 
+                <a href="#home">Back to Top</a>
+            </p>
+        </footer>
 
-                <div class="card-element">
-                    <h3>MSU TelOne Campus, Gweru</h3>
-                    <div class="sub-title">IT Department | IT Support Technician & Campus Assistant</div>
-                    <ul>
-                        <li>Completed a 3-year computational facilities residency resolving tier-1 and tier-2 workstation network issues.</li>
-                        <li>Maintained local campus network infrastructure maps, minimizing active educational downtime.</li>
-                        <li>Provided specialized user support, help desk services, and troubleshooting guidance to laboratory personnel.</li>
-                    </ul>
-                </div>
-
-                <div class="card-element">
-                    <h3>Employer Contribution Default System</h3>
-                    <div class="sub-title">Django Web Application Project Architecture</div>
-                    <ul>
-                        <li>Engineered a full-stack web application structure leveraging custom database models.</li>
-                        <li>Integrated systematic anomaly detection modules to identify institutional default markers automatically.</li>
-                    </ul>
-                </div>
-
-                <div class="card-element">
-                    <h3>Mineral Prospect Systems Pipeline</h3>
-                    <div class="sub-title">Predictive Machine Learning Engineering</div>
-                    <ul>
-                        <li>Formulated supervised machine learning models using Python to optimize geographical mineral prospect predictions.</li>
-                        <li>Applied specialized Scikit-learn, Pandas, and NumPy workflows for core matrix operations.</li>
-                    </ul>
-                </div>
-
-                <div class="card-element">
-                    <h3>Custom Stakeholder KPI Dashboards</h3>
-                    <div class="sub-title">Data Analytics & Visualisation Architecture</div>
-                    <ul>
-                        <li>Constructed user-centric dashboards utilizing advanced features of Matplotlib and Seaborn.</li>
-                        <li>Designed flexible layout components optimized to adapt swiftly to changing organizational visual requirements.</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- 5. Clean Education & Certifications Section -->
-        <section id="education">
-            <h2>Education</h2>
-            
-            <div class="two-column-grid">
-                <div class="card-element" style="border-left: 4px solid var(--accent-glow);">
-                    <h3>BSc (Hons) Degree in Data Science and Informatics</h3>
-                    <div class="sub-title">Midlands State University | Completed Final Examinations</div>
-                    <p style="color: var(--text-secondary); text-align: justify; font-size: 0.95rem;">
-                        Rigorous academic foundation focused heavily on advanced data engineering, computational systems architectures, database lifecycles, and object-oriented frameworks.
-                    </p>
-                </div>
-
-                <div class="card-element">
-                    <h4>Professional Courses & Certifications</h4>
-                    <ul class="skills-list" style="margin-top: 10px;">
-                        <li>Oracle Cloud Infrastructure (OCI) Certified Data Science Professional</li>
-                        <li>Databases and SQL for Data Science with Python — Coursera</li>
-                        <li>What is Data Science? — Coursera</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- 6. Contact Framework Area -->
-        <section id="contact">
-            <h2>Contact</h2>
-            <div class="contact-box" style="margin-top: 20px;">
-                <ul class="contact-list" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px;">
-                    <li><strong>Email Communication</strong><a href="mailto:your.email@email.com">your.email@email.com</a></li>
-                    <li><strong>Professional LinkedIn</strong><a href="https://linkedin.com" target="_blank">Connect Profile</a></li>
-                    <li><strong>GitHub Source Code</strong><a href="https://github.com" target="_blank">://github.com</a></li>
-                </ul>
-            </div>
-        </section>
-
-    </div> <!-- End Container -->
-
-    <!-- Page Footer -->
-    <footer>
-        <p>© 2026 M.Batiya. All rights reserved.</p>
-    </footer>
+    </div>
 
 </body>
 </html>
