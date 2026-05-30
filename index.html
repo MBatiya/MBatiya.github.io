@@ -148,9 +148,9 @@
             position: absolute;
             bottom: -12px;
             left: 0;
-            width: 60px;
-            height: 4px;
-            background: linear-gradient(90deg, var(--accent), var(--accent-secondary));
+            width: 0;
+            height: 0;
+            background: transparent;
             border-radius: 2px;
         }
 
@@ -179,14 +179,14 @@
         /* Hero Section */
         .hero-section {
             text-align: center;
-            padding: 80px 0 60px 0;
+            padding: 40px 0 40px 0;
             border-bottom: 1px solid var(--border);
         }
 
         .name-banner h1 {
             font-size: 3.5rem;
             font-weight: 800;
-            margin-bottom: 12px;
+            margin-bottom: 8px;
             letter-spacing: -1px;
             background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
             -webkit-background-clip: text;
@@ -197,7 +197,7 @@
         .title-tagline {
             font-size: 1.4rem;
             color: var(--text-sub);
-            margin-bottom: 40px;
+            margin-bottom: 0;
             font-weight: 500;
             letter-spacing: 0.5px;
         }
@@ -338,6 +338,7 @@
             color: var(--accent);
             text-decoration: none;
             transition: text-decoration 0.2s, color 0.2s;
+            cursor: pointer;
         }
 
         .contact-list a:hover {
@@ -362,9 +363,10 @@
         }
 
         .skill-category h3 {
-            border-bottom: 2px solid var(--accent);
-            padding-bottom: 12px;
+            border-bottom: none;
+            padding-bottom: 0;
             margin-bottom: 20px;
+            color: var(--accent);
         }
 
         .skills-list {
@@ -663,17 +665,17 @@
 
         <!-- About & Contact Section -->
         <section id="about">
-            <h2>About Me</h2>
+            <h2>About</h2>
             <div class="about-content">
                 <p class="about-para">
-                    I am a versatile Data Science and Informatics professional with a passion for transforming complex data into actionable business intelligence. With a strong foundation in machine learning, statistical analysis, and data engineering, I excel at developing sophisticated solutions that drive organizational growth and informed decision-making. My experience spans the entire data science lifecycle—from designing ETL pipeline architectures and implementing data warehousing solutions to developing advanced predictive models and creating interactive dashboards that enable data-driven decision-making.
+                    I am a versatile Data Science and Informatics professional with a passion for transforming complex data into actionable business intelligence. With a strong foundation in mach[...]
                 </p>
                 <p class="about-para">
-                    As a solution-oriented individual, I blend technical proficiency with strategic thinking to address multifaceted business challenges. My professional journey includes a one-year attachment at the National Social Security Authority's National Data Management Unit, where I developed Django web applications for anomaly detection and engineered customized KPI dashboards. Additionally, my three years of IT support experience at Telone's MSU Gweru Campus equipped me with deep expertise in enterprise infrastructure, help desk operations, and technical troubleshooting. I am committed to continuous learning and staying at the forefront of emerging technologies in data science, artificial intelligence, and cloud computing.
+                    As a solution-oriented individual, I blend technical proficiency with strategic thinking to address multifaceted business challenges. My professional journey includes a one-ye[...]
                 </p>
             </div>
 
-            <h2 style="margin-top: 60px; margin-bottom: 30px;">Contact Details</h2>
+            <h2 style="margin-top: 60px; margin-bottom: 30px;">Contact</h2>
             <div class="contact-box">
                 <ul class="contact-list">
                     <li class="contact-item">
@@ -724,7 +726,7 @@
 
         <!-- Skills Section -->
         <section id="skills">
-            <h2>Skills & Expertise</h2>
+            <h2>Skills</h2>
             <div class="three-column-grid">
                 <!-- Data Science & ML Card -->
                 <div class="skill-category">
@@ -781,12 +783,12 @@
 
         <!-- Projects Section -->
         <section id="projects">
-            <h2>Projects & Deliverables</h2>
+            <h2>Projects</h2>
             <div class="flex-grid">
                 <div class="project-card">
                     <h3>Employer Contribution Default & Anomaly Detection</h3>
                     <p class="project-description">
-                        Engineered a comprehensive Django web application incorporating advanced statistical models and machine learning algorithms to automatically detect and flag employer contribution defaults. System processes high-volume institutional datasets with real-time alerting and anomaly flagging capabilities for proactive intervention.
+                        Engineered a comprehensive Django web application incorporating advanced statistical models and machine learning algorithms to automatically detect and flag employer contr[...]
                     </p>
                     <div class="project-tech">
                         <span class="tech-badge">Django</span>
@@ -800,7 +802,7 @@
                 <div class="project-card">
                     <h3>Customized KPI Dashboard & Analytics Platform</h3>
                     <p class="project-description">
-                        Developed tailored KPI dashboards explicitly designed to stakeholder preferences, translating complex corporate analytics into clear, actionable business insights. Implemented interactive visualizations with drill-down capabilities enabling data-driven decision-making across all organizational levels and departments.
+                        Developed tailored KPI dashboards explicitly designed to stakeholder preferences, translating complex corporate analytics into clear, actionable business insights. Impleme[...]
                     </p>
                     <div class="project-tech">
                         <span class="tech-badge">Plotly</span>
@@ -814,7 +816,7 @@
                 <div class="project-card">
                     <h3>ETL Pipeline Development & Data Processing</h3>
                     <p class="project-description">
-                        Designed and implemented robust ETL (Extract, Transform, Load) pipelines to securely process and cleanse high-volume institutional datasets. Ensured data quality, consistency, accessibility while maintaining security protocols, regulatory compliance, and efficient data transformation workflows.
+                        Designed and implemented robust ETL (Extract, Transform, Load) pipelines to securely process and cleanse high-volume institutional datasets. Ensured data quality, consiste[...]
                     </p>
                     <div class="project-tech">
                         <span class="tech-badge">Python</span>
@@ -828,7 +830,7 @@
                 <div class="project-card">
                     <h3>Predictive Analytics & ML Models</h3>
                     <p class="project-description">
-                        Developed sophisticated machine learning models for predictive analytics, leveraging TensorFlow and Scikit-learn to forecast trends, identify patterns, and support strategic business decisions. Implemented comprehensive feature engineering and model optimization techniques for enhanced accuracy and performance.
+                        Developed sophisticated machine learning models for predictive analytics, leveraging TensorFlow and Scikit-learn to forecast trends, identify patterns, and support strateg[...]
                     </p>
                     <div class="project-tech">
                         <span class="tech-badge">TensorFlow</span>
@@ -842,7 +844,7 @@
                 <div class="project-card">
                     <h3>Data Visualization & EDA</h3>
                     <p class="project-description">
-                        Conducted comprehensive exploratory data analysis (EDA) and created compelling data visualizations using Matplotlib and Seaborn. Applied data cleaning, pattern recognition, and statistical summarization techniques to reveal actionable insights from complex, multidimensional datasets.
+                        Conducted comprehensive exploratory data analysis (EDA) and created compelling data visualizations using Matplotlib and Seaborn. Applied data cleaning, pattern recognition[...]
                     </p>
                     <div class="project-tech">
                         <span class="tech-badge">Matplotlib</span>
@@ -856,7 +858,7 @@
                 <div class="project-card">
                     <h3>IT Infrastructure & Help Desk Operations</h3>
                     <p class="project-description">
-                        Provided comprehensive IT support including hardware troubleshooting, software installations, system maintenance, and network management. Resolved technical issues across campus infrastructure, coordinated OS updates, security patches, and managed computer laboratory operations and user support.
+                        Provided comprehensive IT support including hardware troubleshooting, software installations, system maintenance, and network management. Resolved technical issues across [...]
                     </p>
                     <div class="project-tech">
                         <span class="tech-badge">Help Desk</span>
@@ -871,7 +873,7 @@
 
         <!-- Working Experience Section -->
         <section id="experience">
-            <h2>Working Experience</h2>
+            <h2>Experience</h2>
 
             <div class="two-column-grid">
                 <!-- NSSA Experience -->
@@ -882,7 +884,7 @@
                     <div class="experience-period">October 2024 - September 2025 (1-Year Attachment)</div>
                     <ul>
                         <li>Performed ETL (Extract, Transform, Load) pipelines to securely process and clean high-volume institutional datasets</li>
-                        <li>Developed customized KPI dashboards explicitly tailored to stakeholder preferences, translating complex corporate analytics into clear, actionable business insights</li>
+                        <li>Developed customized KPI dashboards explicitly tailored to stakeholder preferences, translating complex corporate analytics into clear, actionable business insights</l[...]
                         <li>Engineered a Django web application incorporating advanced statistical models to flag employer contribution defaults and perform sophisticated anomaly detection</li>
                         <li>Conducted exploratory data analysis (EDA) on institutional datasets to identify trends, patterns, and anomalies</li>
                         <li>Collaborated with cross-functional teams to understand business requirements and implement data-driven solutions</li>
@@ -978,10 +980,6 @@
         <!-- Footer -->
         <footer>
             <p>&copy; 2026 M. Batiya. All rights reserved.</p>
-            <p style="margin-top: 10px; font-size: 0.85rem;">
-                Crafted with <span style="color: var(--accent);">♥</span> | 
-                <a href="#home">Back to Top</a>
-            </p>
         </footer>
 
     </div>
