@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>M. Batiya | Portfolio</title>
+    <!-- Custom styling with CSS Grid and Cards for Layout -->
+    <style>
+        :root { --bg: #0f172a; --card: #1e293b; --text: #f8fafc; --accent: #38bdf8; --muted: #94a3b8; }
+        body { background-color: var(--bg); color: var(--text); font-family: sans-serif; margin: 0; }
+        .container { max-width: 1100px; margin: auto; padding: 20px; }
+        header { text-align: center; padding: 50px 0; border-bottom: 1px solid #334155; }
+        h1 { color: var(--accent); margin: 0; }
+        h2 { border-bottom: 2px solid #334155; padding-bottom: 10px; margin-top: 40px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .card { background-color: var(--card); padding: 20px; border-radius: 8px; border: 1px solid #334155; }
+        .skills-list { display: flex; flex-wrap: wrap; gap: 10px; list-style: none; padding: 0; }
+        .skills-list li { background: #334155; padding: 5px 10px; border-radius: 15px; font-size: 0.9rem; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { text-align: left; padding: 10px; border-bottom: 1px solid #334155; }
+        .badge { padding: 2px 6px; border-radius: 4px; font-size: 0.8rem; }
+        .badge-1 { background-color: rgba(74, 222, 128, 0.2); color: #4ade80; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>M. Batiya</h1>
+        <p>Data Scientist | Machine Learning Engineer | IT Specialist</p>
+    </header>
+    <div class="container">
+        <section id="about">
+            <h2>Profile</h2>
+            <p>Data Science professional with experience in NSSA data management, EDA, feature engineering, and Django application development. Background includes MSU TelOne IT support.</p>
+        </section>
+        <section id="skills">
+            <h2>Skills</h2>
+            <div class="skills-list">
+                <li>Python</li><li>R</li><li>Pandas</li><li>SQL</li><li>Scikit-learn</li><li>Django</li><li>EDA</li>
+            </div>
+        </section>
+        <section id="experience">
+            <h2>Experience</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>NSSA - Data Management Intern</h3>
+                    <p>Data Cleaning, EDA, and Feature Engineering.</p>
+                </div>
+                <div class="card">
+                    <h3>MSU TelOne - IT Technician</h3>
+                    <p>Network troubleshooting and user support.</p>
+                </div>
+            </div>
+        </section>
+        <section id="education">
+            <h2>Education</h2>
+            <p>BSc (Hons) Data Science and Informatics, Midlands State University.</p>
+        </section>
+    </div>
+</body>
+</html>
