@@ -5,19 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>M. Batiya | Data Scientist | Business Analyst | IT Specialist</title>
     <style>
-        /* Modern Dark Portfolio Color Scheme */
+        /* Professional Dark Portfolio Color Scheme */
         :root {
-            --bg-color: #0b0f19;
-            --card-color: #131c2e;
-            --nav-color: rgba(11, 15, 25, 0.95);
-            --text-main: #f1f5f9;
-            --text-sub: #94a3b8;
-            --accent: #38bdf8;
-            --accent-hover: #0ea5e9;
-            --accent-secondary: #06b6d4;
-            --border: #1e293b;
-            --success: #10b981;
-            --warning: #f59e0b;
+            --bg-color: #0f1117;
+            --card-color: #161b22;
+            --nav-color: rgba(15, 17, 23, 0.95);
+            --text-main: #e6edf3;
+            --text-sub: #8b949e;
+            --accent: #1f6feb;
+            --accent-hover: #388bfd;
+            --accent-secondary: #58a6ff;
+            --border: #30363d;
+            --success: #3fb950;
+            --warning: #d29922;
         }
 
         * {
@@ -114,7 +114,7 @@
         }
 
         section {
-            padding: 80px 0 50px 0;
+            padding: 60px 0 50px 0;
             border-bottom: 1px solid var(--border);
             animation: fadeIn 0.6s ease-in;
         }
@@ -179,7 +179,7 @@
         /* Hero Section */
         .hero-section {
             text-align: center;
-            padding: 40px 0 40px 0;
+            padding: 40px 0 30px 0;
             border-bottom: 1px solid var(--border);
         }
 
@@ -239,9 +239,9 @@
         }
 
         .card:hover {
-            transform: translateY(-6px);
+            transform: translateY(-8px);
             border-color: var(--accent);
-            box-shadow: 0 10px 30px rgba(56, 189, 248, 0.1);
+            box-shadow: 0 15px 40px rgba(31, 111, 235, 0.12);
         }
 
         .card h4 {
@@ -272,31 +272,19 @@
             font-size: 1.2rem;
         }
 
-        /* About Section Styling */
-        .about-content {
-            grid-column: 1 / -1;
-        }
-
-        .about-para {
-            font-size: 1.05rem;
-            color: var(--text-sub);
-            text-align: justify;
-            margin-bottom: 25px;
-            line-height: 1.8;
-        }
-
-        /* Contact Details Styling */
+        /* Contact Section Styling */
         .contact-box {
             background-color: var(--card-color);
             padding: 35px;
             border-radius: 10px;
             border: 1px solid var(--border);
-            transition: transform 0.3s ease, border-color 0.3s ease;
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
         }
 
         .contact-box:hover {
-            transform: translateY(-4px);
+            transform: translateY(-8px);
             border-color: var(--accent);
+            box-shadow: 0 15px 40px rgba(31, 111, 235, 0.12);
         }
 
         .contact-list {
@@ -347,6 +335,19 @@
             color: var(--accent-hover);
         }
 
+        /* About Section Styling */
+        .about-content {
+            grid-column: 1 / -1;
+        }
+
+        .about-para {
+            font-size: 1.05rem;
+            color: var(--text-sub);
+            text-align: justify;
+            margin-bottom: 25px;
+            line-height: 1.8;
+        }
+
         /* Skills Layout */
         .skill-category {
             background-color: var(--card-color);
@@ -358,9 +359,9 @@
         }
 
         .skill-category:hover {
-            transform: translateY(-6px);
+            transform: translateY(-8px);
             border-color: var(--accent);
-            box-shadow: 0 10px 30px rgba(56, 189, 248, 0.1);
+            box-shadow: 0 15px 40px rgba(31, 111, 235, 0.12);
         }
 
         .skill-category h3 {
@@ -403,8 +404,8 @@
         }
 
         .experience-item:hover {
-            transform: translateX(6px);
-            box-shadow: 0 10px 30px rgba(56, 189, 248, 0.1);
+            transform: translateX(8px);
+            box-shadow: 0 15px 40px rgba(31, 111, 235, 0.12);
         }
 
         .experience-item h3 {
@@ -457,9 +458,9 @@
         }
 
         .project-card:hover {
-            transform: translateY(-8px);
+            transform: translateY(-10px);
             border-color: var(--accent);
-            box-shadow: 0 15px 40px rgba(56, 189, 248, 0.15);
+            box-shadow: 0 20px 50px rgba(31, 111, 235, 0.15);
         }
 
         .project-card h3 {
@@ -481,7 +482,7 @@
         }
 
         .tech-badge {
-            background-color: rgba(56, 189, 248, 0.1);
+            background-color: rgba(31, 111, 235, 0.1);
             color: var(--accent);
             padding: 4px 12px;
             border-radius: 20px;
@@ -496,13 +497,14 @@
             padding: 30px;
             border-radius: 10px;
             border: 1px solid var(--border);
-            transition: transform 0.3s ease, border-color 0.3s ease;
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
             border-top: 4px solid var(--accent);
         }
 
         .education-card:hover {
-            transform: translateY(-4px);
+            transform: translateY(-8px);
             border-color: var(--accent);
+            box-shadow: 0 15px 40px rgba(31, 111, 235, 0.12);
         }
 
         .degree-name {
@@ -547,7 +549,7 @@
         .btn-cta {
             display: inline-block;
             background-color: var(--accent);
-            color: var(--bg-color);
+            color: #ffffff;
             text-decoration: none;
             padding: 12px 32px;
             font-weight: 600;
@@ -562,7 +564,7 @@
             background-color: var(--accent-hover);
             border-color: var(--accent-hover);
             transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(56, 189, 248, 0.3);
+            box-shadow: 0 8px 20px rgba(31, 111, 235, 0.3);
         }
 
         .btn-secondary {
@@ -571,7 +573,7 @@
         }
 
         .btn-secondary:hover {
-            background-color: rgba(56, 189, 248, 0.1);
+            background-color: rgba(31, 111, 235, 0.1);
         }
 
         /* Footer Alignment */
@@ -664,8 +666,8 @@
         <div class="nav-container">
             <a href="#home" class="logo">M. BATIYA</a>
             <ul class="nav-links">
-                <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#experience">Experience</a></li>
@@ -684,19 +686,9 @@
             </div>
         </section>
 
-        <!-- About & Contact Section -->
-        <section id="about">
-            <h2>About</h2>
-            <div class="about-content">
-                <p class="about-para">
-                    I am a versatile Data Science and Informatics professional with a passion for transforming complex data into actionable business intelligence. With a strong foundation in machine learning, statistical analysis, and data engineering, I specialize in building data-driven solutions that solve real-world business challenges. My expertise spans from advanced analytics and predictive modeling to full-stack data infrastructure and ETL pipeline development.
-                </p>
-                <p class="about-para">
-                    As a solution-oriented individual, I blend technical proficiency with strategic thinking to address multifaceted business challenges. My professional journey includes a one-year data science attachment at the National Social Security Authority (NSSA), where I developed customized KPI dashboards, engineered anomaly detection systems, and designed robust ETL pipelines for institutional data processing. I am committed to continuous learning, collaborating with cross-functional teams, and delivering measurable business value through data-driven innovation.
-                </p>
-            </div>
-
-            <h2 style="margin-top: 60px; margin-bottom: 30px;">Contact</h2>
+        <!-- Contact Section (Now First) -->
+        <section id="contact">
+            <h2>Contact</h2>
             <div class="contact-box">
                 <ul class="contact-list">
                     <li class="contact-item">
@@ -742,6 +734,19 @@
                         </div>
                     </li>
                 </ul>
+            </div>
+        </section>
+
+        <!-- About Section (Now Second) -->
+        <section id="about">
+            <h2>About</h2>
+            <div class="about-content">
+                <p class="about-para">
+                    I am a versatile Data Science and Informatics professional with a passion for transforming complex data into actionable business intelligence. With a strong foundation in machine l[...]
+                </p>
+                <p class="about-para">
+                    As a solution-oriented individual, I blend technical proficiency with strategic thinking to address multifaceted business challenges. My professional journey includes a one-year da[...]
+                </p>
             </div>
         </section>
 
@@ -809,7 +814,7 @@
                 <div class="project-card">
                     <h3>Employer Contribution Default & Anomaly Detection</h3>
                     <p class="project-description">
-                        Engineered a comprehensive Django web application incorporating advanced statistical models and machine learning algorithms to automatically detect and flag employer contribution defaults and anomalies in institutional datasets. Implemented real-time alerts and dashboards for compliance monitoring.
+                        Engineered a comprehensive Django web application incorporating advanced statistical models and machine learning algorithms to automatically detect and flag employer contributi[...]
                     </p>
                     <div class="project-tech">
                         <span class="tech-badge">Django</span>
@@ -823,7 +828,7 @@
                 <div class="project-card">
                     <h3>Customized KPI Dashboard & Analytics Platform</h3>
                     <p class="project-description">
-                        Developed tailored KPI dashboards explicitly designed to stakeholder preferences, translating complex corporate analytics into clear, actionable business insights. Implemented interactive visualizations and drill-down capabilities for executive decision-making.
+                        Developed tailored KPI dashboards explicitly designed to stakeholder preferences, translating complex corporate analytics into clear, actionable business insights. Implemented [...]
                     </p>
                     <div class="project-tech">
                         <span class="tech-badge">Plotly</span>
@@ -837,7 +842,7 @@
                 <div class="project-card">
                     <h3>ETL Pipeline Development & Data Processing</h3>
                     <p class="project-description">
-                        Designed and implemented robust ETL (Extract, Transform, Load) pipelines to securely process and cleanse high-volume institutional datasets. Ensured data quality, consistency, and compliance with organizational governance standards.
+                        Designed and implemented robust ETL (Extract, Transform, Load) pipelines to securely process and cleanse high-volume institutional datasets. Ensured data quality, consistency, [...]
                     </p>
                     <div class="project-tech">
                         <span class="tech-badge">Python</span>
@@ -851,7 +856,7 @@
                 <div class="project-card">
                     <h3>Predictive Analytics & ML Models</h3>
                     <p class="project-description">
-                        Developed sophisticated machine learning models for predictive analytics, leveraging TensorFlow and Scikit-learn to forecast trends, identify patterns, and support strategic business planning and risk mitigation initiatives.
+                        Developed sophisticated machine learning models for predictive analytics, leveraging TensorFlow and Scikit-learn to forecast trends, identify patterns, and support strategic bu[...]
                     </p>
                     <div class="project-tech">
                         <span class="tech-badge">TensorFlow</span>
@@ -865,7 +870,7 @@
                 <div class="project-card">
                     <h3>Data Visualization & EDA</h3>
                     <p class="project-description">
-                        Conducted comprehensive exploratory data analysis (EDA) and created compelling data visualizations using Matplotlib and Seaborn. Applied data cleaning, pattern recognition, and statistical techniques to uncover actionable insights.
+                        Conducted comprehensive exploratory data analysis (EDA) and created compelling data visualizations using Matplotlib and Seaborn. Applied data cleaning, pattern recognition, and[...]
                     </p>
                     <div class="project-tech">
                         <span class="tech-badge">Matplotlib</span>
@@ -879,7 +884,7 @@
                 <div class="project-card">
                     <h3>IT Infrastructure & Help Desk Operations</h3>
                     <p class="project-description">
-                        Provided comprehensive IT support including hardware troubleshooting, software installations, system maintenance, and network management. Resolved technical issues across campus infrastructure while maintaining system uptime and user productivity.
+                        Provided comprehensive IT support including hardware troubleshooting, software installations, system maintenance, and network management. Resolved technical issues across campu[...]
                     </p>
                     <div class="project-tech">
                         <span class="tech-badge">Help Desk</span>
@@ -998,12 +1003,12 @@
             </div>
         </section>
 
-    </div>
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2025 M. Batiya. All rights reserved.</p>
+        </footer>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 M. Batiya. All rights reserved. | <a href="https://mbatiya.github.io">Portfolio</a></p>
-    </footer>
+    </div>
 
 </body>
 </html>
